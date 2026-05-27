@@ -10,6 +10,11 @@
  */
 
 require('dotenv').config();
+
+// Force Node.js DNS to prefer IPv4 — fixes Atlas SRV resolution on Windows
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
+
 const mongoose = require('mongoose');
 const { Worker } = require('bullmq');
 const { SSMClient, SendCommandCommand, GetCommandInvocationCommand } = require('@aws-sdk/client-ssm');

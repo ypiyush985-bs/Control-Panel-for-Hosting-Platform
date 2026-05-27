@@ -1,13 +1,13 @@
 /**
  * Deployment Control Panel — Express API Server
- *
- * Endpoints:
- *   POST /api/deploy          — queue a new deployment
- *   GET  /api/status/:id      — poll deployment status
- *   GET  /api/deployments     — list all deployments
  */
 
 require('dotenv').config();
+
+// Force Node.js DNS to prefer IPv4 — fixes Atlas SRV resolution on Windows
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
+
 const express  = require('express');
 const cors     = require('cors');
 const mongoose = require('mongoose');
