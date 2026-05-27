@@ -1,0 +1,64 @@
+/* Notification.css — Requirements: 10.1–10.8, 11.7 */
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  min-width: 280px;
+  max-width: 380px;
+  box-shadow: var(--shadow);
+  animation: notif-in 200ms ease;
+}
+
+@keyframes notif-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.notification--success {
+  background: var(--notification-success-bg);
+  border-color: var(--notification-success-border);
+  color: var(--status-success);
+}
+
+.notification--error {
+  background: var(--notification-error-bg);
+  border-color: var(--notification-error-border);
+  color: var(--status-error);
+}
+
+.notification__message {
+  flex: 1;
+  color: var(--text);
+}
+
+.notification__dismiss {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.notification__dismiss:hover { color: var(--text); }
+
+/* NotificationStack */
+.notification-stack {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.notification-stack > * { pointer-events: auto; }

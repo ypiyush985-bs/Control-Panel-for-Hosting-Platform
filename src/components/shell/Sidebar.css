@@ -1,0 +1,97 @@
+/* Sidebar.css — Requirements: 1.1–1.3, 1.5–1.8, 11.1, 11.5, 11.6 */
+.sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: var(--sidebar-transition);
+  grid-row: 1 / -1;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.75rem;
+  height: var(--header-height);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sidebar__logo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar__toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sidebar__toggle:hover { background: var(--accent-bg); color: var(--accent); }
+
+.sidebar__nav {
+  flex: 1;
+  padding: 0.5rem 0;
+  overflow-y: auto;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  color: var(--text);
+  font-size: 0.875rem;
+  border-left: 3px solid transparent;
+  transition: background 150ms ease, color 150ms ease;
+  white-space: nowrap;
+}
+
+.sidebar__item:hover {
+  background: var(--sidebar-hover-bg);
+  color: var(--accent);
+}
+
+.sidebar__item--active {
+  background: var(--sidebar-active-bg);
+  border-left-color: var(--sidebar-active-border);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar__label {
+  overflow: hidden;
+  transition: opacity 150ms ease;
+}
+
+/* Collapsed state */
+.sidebar--collapsed .sidebar__label { display: none; }
+.sidebar--collapsed .sidebar__logo  { display: none; }
+.sidebar--collapsed .sidebar__item  { justify-content: center; padding: 0.625rem; }

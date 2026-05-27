@@ -1,0 +1,60 @@
+/* src/styles/hcp-tokens.css
+ * HCP-specific CSS custom properties.
+ * Extends the base tokens defined in src/index.css without overriding them.
+ */
+
+:root {
+  /* ── Layout ──────────────────────────────────────────────────────────── */
+  --sidebar-width-expanded: 240px;
+  --sidebar-width-collapsed: 60px;
+  --header-height: 56px;
+
+  /* ── Status colors ───────────────────────────────────────────────────── */
+  --status-success: #22c55e;
+  --status-warning: #f59e0b;
+  --status-error: #ef4444;
+  --status-info: #3b82f6;
+
+  /* ── Progress bar variants ───────────────────────────────────────────── */
+  --progress-normal: var(--accent);
+  --progress-warning: #f59e0b;
+  --progress-critical: #ef4444;
+
+  /* ── Notification ────────────────────────────────────────────────────── */
+  --notification-success-bg: rgba(34, 197, 94, 0.12);
+  --notification-success-border: rgba(34, 197, 94, 0.4);
+  --notification-error-bg: rgba(239, 68, 68, 0.12);
+  --notification-error-border: rgba(239, 68, 68, 0.4);
+
+  /* ── SSL status badges ───────────────────────────────────────────────── */
+  --ssl-active: #22c55e;
+  --ssl-expired: #ef4444;
+  --ssl-none: var(--text);
+
+  /* ── Sidebar ─────────────────────────────────────────────────────────── */
+  --sidebar-bg: var(--bg);
+  --sidebar-active-bg: var(--accent-bg);
+  --sidebar-active-border: var(--accent);
+  --sidebar-hover-bg: var(--accent-bg);
+
+  /* ── Card ────────────────────────────────────────────────────────────── */
+  --card-bg: var(--bg);
+  --card-border: var(--border);
+  --card-shadow: var(--shadow);
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --sidebar-transition: width 200ms ease;
+  --notification-transition: opacity 300ms ease, transform 300ms ease;
+}
+
+/* ── Dark-theme overrides ────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --status-success: #4ade80;
+  --status-warning: #fbbf24;
+  --status-error: #f87171;
+
+  --notification-success-bg: rgba(74, 222, 128, 0.1);
+  --notification-success-border: rgba(74, 222, 128, 0.35);
+  --notification-error-bg: rgba(248, 113, 113, 0.1);
+  --notification-error-border: rgba(248, 113, 113, 0.35);
+}
